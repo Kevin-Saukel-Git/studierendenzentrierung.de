@@ -10,6 +10,8 @@ function generateSiteMap() {
 		{ url: "/toolbox/die-tools", changefreq: "weekly", priority: "0.9" },
 		{ url: "/toolbox/einreichen", changefreq: "monthly", priority: "0.7" },
 		{ url: "/toolbox/verfahren", changefreq: "monthly", priority: "0.7" },
+		{ url: "/privacy-policy", changefreq: "yearly", priority: "0.5" },
+		{ url: "/impressum", changefreq: "yearly", priority: "0.5" },
 	];
 
 	const toolPages = Tools.map((tool, index) => ({

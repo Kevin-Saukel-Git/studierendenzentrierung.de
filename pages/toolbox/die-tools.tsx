@@ -2,11 +2,22 @@ import { useState, useMemo, useRef, useEffect } from "react";
 import { Title, Text, Stack, Grid, Card, Button, Group, Badge, Paper, Box, Container, Tooltip } from "@mantine/core";
 import { Tools, Tool, ToolCategory, ToolTag } from "../../data/Tool";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { SEO } from "../../components/SEO";
 
 export default function DieToolsPage() {
+	const router = useRouter();
+	const { search } = router.query;
 	const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 	const [selectedTags, setSelectedTags] = useState<string[]>([]);
+	const [searchQuery, setSearchQuery] = useState<string>("");
+
+	// Initialize search query from URL parameter
+	useEffect(() => {
+		if (search && typeof search === "string") {
+			setSearchQuery(search);
+		}
+	}, [search]);
 
 	const structuredData = {
 		"@context": "https://schema.org",
@@ -34,7 +45,7 @@ export default function DieToolsPage() {
 	const categories = Object.values(ToolCategory).filter((cat) => cat !== ToolCategory.NONE);
 	const allTags = Object.values(ToolTag);
 
-	// Filter tools based on selected category and tags, then sort by category order, then alphabetically
+	// Filter tools based on selected category, tags, and search query, then sort by category order, then alphabetically
 	const filteredTools = useMemo(() => {
 		const categoryOrder = [
 			ToolCategory.HOCHSCHULORGANISATION,
@@ -43,12 +54,23 @@ export default function DieToolsPage() {
 			ToolCategory.RAHMENBEDINGUNGEN,
 		];
 
+		const query = searchQuery.toLowerCase().trim();
+
 		return Tools.filter((tool) => {
 			const categoryMatch = !selectedCategory || tool.category === selectedCategory;
 			const tagMatch =
 				selectedTags.length === 0 ||
 				selectedTags.some((tag) => tool.tags.includes(tag as ToolTag));
-			return categoryMatch && tagMatch;
+			
+			// Search filter
+			const searchMatch =
+				!query ||
+				tool.title.toLowerCase().includes(query) ||
+				tool.shortDescription.toLowerCase().includes(query) ||
+				tool.category.toLowerCase().includes(query) ||
+				tool.tags.some((tag) => tag.toLowerCase().includes(query));
+
+			return categoryMatch && tagMatch && searchMatch;
 		}).sort((a, b) => {
 			// First sort by category order
 			const categoryIndexA = categoryOrder.indexOf(a.category);
@@ -61,7 +83,7 @@ export default function DieToolsPage() {
 			// Then sort alphabetically by title within the same category
 			return a.title.localeCompare(b.title, "de");
 		});
-	}, [selectedCategory, selectedTags]);
+	}, [selectedCategory, selectedTags, searchQuery]);
 
 	const formatDate = (date: Date) => {
 		return new Date(date).toLocaleDateString("de-DE", {
@@ -178,6 +200,38 @@ export default function DieToolsPage() {
 							Hier finden Sie eine Übersicht aller verfügbaren Tools für die
 							Studierendenzentrierung.
 						</Text>
+						{searchQuery && (
+							<Group gap="md" mt="md">
+								<Badge
+									size="lg"
+									style={{
+										backgroundColor: "#1e3a8a",
+										color: "white",
+									}}
+									rightSection={
+										<Button
+											variant="subtle"
+											size="xs"
+											style={{
+												color: "white",
+												padding: 0,
+												minWidth: "auto",
+												width: "20px",
+												height: "20px",
+											}}
+											onClick={() => {
+												setSearchQuery("");
+												router.push("/toolbox/die-tools");
+											}}
+										>
+											×
+										</Button>
+									}
+								>
+									Suche: {searchQuery}
+								</Badge>
+							</Group>
+						)}
 					</Container>
 				</Box>
 
