@@ -111,7 +111,7 @@ export default function PrivacyPolicyPage() {
 									Die Datenverarbeitung auf dieser Website erfolgt
 									durch den Websitebetreiber. Dessen Kontaktdaten
 									können Sie dem Abschnitt „Verantwortliche
-									Stelle" in dieser Datenschutzerklärung
+									Stelle&rdquo; in dieser Datenschutzerklärung
 									entnehmen.
 								</Text>
 
@@ -767,8 +767,8 @@ export default function PrivacyPolicyPage() {
 									Sie an uns als Seitenbetreiber senden, eine SSL-
 									bzw. TLS-Verschlüsselung. Eine verschlüsselte
 									Verbindung erkennen Sie daran, dass die
-									Adresszeile des Browsers von „http://" auf
-									„https://" wechselt und an dem Schloss-Symbol in
+									Adresszeile des Browsers von „http://&rdquo; auf
+									„https://&rdquo; wechselt und an dem Schloss-Symbol in
 									Ihrer Browserzeile.
 								</Text>
 								<Text mb="md">

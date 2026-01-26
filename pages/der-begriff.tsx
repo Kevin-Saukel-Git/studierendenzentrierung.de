@@ -119,7 +119,7 @@ export default function DerBegriffPage() {
 											Lehr-Lernveranstaltungen,
 											Lehr-Lern-Projekte und
 											Hochschulorganisation gedacht
-											werden."
+											werden.&rdquo;
 										</Text>
 										<Text
 											size="sm"
@@ -372,19 +372,19 @@ export default function DerBegriffPage() {
 													color: "#1e3a8a",
 													marginBottom:
 														"0.5rem",
-												}}
-											>
-												"Institutions should
-												ensure that the
-												programmes are delivered
-												in a way that encourages
-												students to take an
-												active role in creating
-												the learning process,
-												and that the assessment
-												of students reflects
-												this approach."
-											</Text>
+											}}
+										>
+											&ldquo;Institutions should
+											ensure that the
+											programmes are delivered
+											in a way that encourages
+											students to take an
+											active role in creating
+											the learning process,
+											and that the assessment
+											of students reflects
+											this approach.&rdquo;
+										</Text>
 											<Text
 												size="xs"
 												c="dimmed"
