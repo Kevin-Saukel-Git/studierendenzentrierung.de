@@ -1,7 +1,9 @@
 import { Title, Text, Stack, Paper, Box, Container, Divider } from "@mantine/core";
+import { useMediaQuery } from "@mantine/hooks";
 import { SEO } from "../components/SEO";
 
 export default function PrivacyPolicyPage() {
+	const isMobile = useMediaQuery("(max-width: 768px)");
 	return (
 		<>
 			<SEO
@@ -21,7 +23,7 @@ export default function PrivacyPolicyPage() {
 					<Container size="lg">
 						<Title
 							order={1}
-							size="3rem"
+							size={isMobile ? "1.7rem" : "3rem"}
 							fw={800}
 							style={{
 								color: "#1e3a8a",
@@ -54,7 +56,7 @@ export default function PrivacyPolicyPage() {
 								<Box>
 									<Title
 										order={2}
-										size="1.75rem"
+										size={isMobile ? "1.25rem" : "1.75rem"}
 										fw={700}
 										style={{
 											color: "#1e3a8a",
@@ -237,7 +239,7 @@ export default function PrivacyPolicyPage() {
 								<Box>
 									<Title
 										order={2}
-										size="1.75rem"
+										size={isMobile ? "1.25rem" : "1.75rem"}
 										fw={700}
 										style={{
 											color: "#1e3a8a",
@@ -355,7 +357,7 @@ export default function PrivacyPolicyPage() {
 								<Box>
 									<Title
 										order={2}
-										size="1.75rem"
+										size={isMobile ? "1.25rem" : "1.75rem"}
 										fw={700}
 										style={{
 											color: "#1e3a8a",
@@ -818,7 +820,7 @@ export default function PrivacyPolicyPage() {
 								<Box>
 									<Title
 										order={2}
-										size="1.75rem"
+										size={isMobile ? "1.25rem" : "1.75rem"}
 										fw={700}
 										style={{
 											color: "#1e3a8a",

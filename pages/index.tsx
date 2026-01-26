@@ -1,8 +1,10 @@
 import { Button, Group, Title, Text, Stack, Container, Box, Paper } from "@mantine/core";
+import { useMediaQuery } from "@mantine/hooks";
 import Link from "next/link";
 import { SEO } from "../components/SEO";
 
 export default function IndexPage() {
+	const isMobile = useMediaQuery("(max-width: 768px)");
 	const structuredData = {
 		"@context": "https://schema.org",
 		"@type": "WebSite",
@@ -45,7 +47,7 @@ export default function IndexPage() {
 						>
 							<Title
 								order={1}
-								size="3.5rem"
+								size={isMobile ? "1.7rem" : "3.5rem"}
 								fw={800}
 								style={{
 									color: "#1e3a8a",
@@ -139,7 +141,7 @@ export default function IndexPage() {
 						>
 							<Title
 								order={2}
-								size="2rem"
+								size={isMobile ? "1.5rem" : "2rem"}
 								fw={700}
 								style={{ color: "#1e3a8a" }}
 							>

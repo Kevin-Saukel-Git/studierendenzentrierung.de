@@ -1,8 +1,10 @@
 import { Title, Text, Stack, Container, Box, List, Divider, Anchor, Group, Grid, Paper } from "@mantine/core";
+import { useMediaQuery } from "@mantine/hooks";
 import Image from "next/image";
 import { SEO } from "../components/SEO";
 
 export default function DerBegriffPage() {
+	const isMobile = useMediaQuery("(max-width: 768px)");
 	const structuredData = {
 		"@context": "https://schema.org",
 		"@type": "Article",
@@ -47,7 +49,7 @@ export default function DerBegriffPage() {
 					<Container size="lg">
 						<Title
 							order={1}
-							size="3rem"
+							size={isMobile ? "2rem" : "3rem"}
 							fw={800}
 							style={{
 								color: "#1e3a8a",
@@ -227,7 +229,7 @@ export default function DerBegriffPage() {
 								<Box style={{ flex: 1, minWidth: "300px" }}>
 									<Title
 										order={2}
-										size="2rem"
+										size={isMobile ? "1.5rem" : "2rem"}
 										fw={700}
 										style={{
 											color: "#1e3a8a",
@@ -321,7 +323,7 @@ export default function DerBegriffPage() {
 								<Stack gap="lg">
 									<Title
 										order={2}
-										size="2rem"
+										size={isMobile ? "1.5rem" : "2rem"}
 										fw={700}
 										style={{ color: "#1e3a8a" }}
 									>
@@ -332,7 +334,7 @@ export default function DerBegriffPage() {
 									<Box>
 										<Title
 											order={3}
-											size="1.5rem"
+											size={isMobile ? "1.25rem" : "1.5rem"}
 											fw={600}
 											mb="md"
 											style={{ color: "#1e3a8a" }}
@@ -411,7 +413,7 @@ export default function DerBegriffPage() {
 									<Box>
 										<Title
 											order={3}
-											size="1.5rem"
+											size={isMobile ? "1.25rem" : "1.5rem"}
 											fw={600}
 											mb="md"
 											style={{ color: "#1e3a8a" }}
@@ -800,7 +802,7 @@ export default function DerBegriffPage() {
 							<Stack gap="lg">
 								<Title
 									order={2}
-									size="2rem"
+									size={isMobile ? "1.5rem" : "2rem"}
 									fw={700}
 									style={{ color: "#1e3a8a" }}
 								>
@@ -887,7 +889,7 @@ export default function DerBegriffPage() {
 							<Stack gap="lg">
 								<Title
 									order={2}
-									size="2rem"
+									size={isMobile ? "1.5rem" : "2rem"}
 									fw={700}
 									style={{ color: "#1e3a8a" }}
 								>

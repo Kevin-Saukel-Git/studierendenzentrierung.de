@@ -1,7 +1,9 @@
 import { Title, Text, Stack, Paper, Box, Container } from "@mantine/core";
+import { useMediaQuery } from "@mantine/hooks";
 import { SEO } from "../components/SEO";
 
 export default function ImpressumPage() {
+	const isMobile = useMediaQuery("(max-width: 768px)");
 	return (
 		<>
 			<SEO
@@ -22,7 +24,7 @@ export default function ImpressumPage() {
 					<Container size="lg">
 						<Title
 							order={1}
-							size="3rem"
+							size={isMobile ? "2rem" : "3rem"}
 							fw={800}
 							style={{
 								color: "#1e3a8a",
@@ -55,7 +57,7 @@ export default function ImpressumPage() {
 								<Box>
 									<Title
 										order={2}
-										size="1.75rem"
+										size={isMobile ? "1.25rem" : "1.75rem"}
 										fw={700}
 										style={{
 											color: "#1e3a8a",
@@ -96,7 +98,7 @@ export default function ImpressumPage() {
 								<Box>
 									<Title
 										order={2}
-										size="1.75rem"
+										size={isMobile ? "1.25rem" : "1.75rem"}
 										fw={700}
 										style={{
 											color: "#1e3a8a",
@@ -136,7 +138,7 @@ export default function ImpressumPage() {
 								<Box>
 									<Title
 										order={2}
-										size="1.75rem"
+										size={isMobile ? "1.25rem" : "1.75rem"}
 										fw={700}
 										style={{
 											color: "#1e3a8a",
@@ -166,7 +168,7 @@ export default function ImpressumPage() {
 								<Box>
 									<Title
 										order={2}
-										size="1.75rem"
+										size={isMobile ? "1.25rem" : "1.75rem"}
 										fw={700}
 										style={{
 											color: "#1e3a8a",
@@ -196,7 +198,7 @@ export default function ImpressumPage() {
 								<Box>
 									<Title
 										order={2}
-										size="1.75rem"
+										size={isMobile ? "1.25rem" : "1.75rem"}
 										fw={700}
 										style={{
 											color: "#1e3a8a",

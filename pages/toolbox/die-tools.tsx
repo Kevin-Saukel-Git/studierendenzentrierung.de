@@ -1,5 +1,6 @@
 import { useState, useMemo, useRef, useEffect } from "react";
 import { Title, Text, Stack, Grid, Card, Button, Group, Badge, Paper, Box, Container, Tooltip } from "@mantine/core";
+import { useMediaQuery } from "@mantine/hooks";
 import { Tools, Tool, ToolCategory, ToolTag } from "../../data/Tool";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -8,6 +9,7 @@ import { SEO } from "../../components/SEO";
 export default function DieToolsPage() {
 	const router = useRouter();
 	const { search } = router.query;
+	const isMobile = useMediaQuery("(max-width: 768px)");
 	const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 	const [selectedTags, setSelectedTags] = useState<string[]>([]);
 	const [searchQuery, setSearchQuery] = useState<string>("");
@@ -183,7 +185,7 @@ export default function DieToolsPage() {
 					<Container size="lg">
 						<Title
 							order={1}
-							size="3rem"
+							size={isMobile ? "2rem" : "3rem"}
 							fw={800}
 							style={{
 								color: "#1e3a8a",

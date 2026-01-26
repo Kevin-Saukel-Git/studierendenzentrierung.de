@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import { Title, Text, Stack, Card, Group, Badge, Paper, Box, Anchor, Button, Divider, Grid } from "@mantine/core";
+import { useMediaQuery } from "@mantine/hooks";
 import { Tools, ToolCategory } from "../../data/Tool";
 import Link from "next/link";
 import { SEO } from "../../components/SEO";
@@ -7,6 +8,7 @@ import { SEO } from "../../components/SEO";
 export default function ToolDetailPage() {
 	const router = useRouter();
 	const { id } = router.query;
+	const isMobile = useMediaQuery("(max-width: 768px)");
 
 	// Find tool by index
 	const toolIndex = id ? parseInt(id as string) : -1;
@@ -101,7 +103,7 @@ export default function ToolDetailPage() {
 					<Box
 						style={{
 							background: `linear-gradient(135deg, ${categoryColor} 0%, ${categoryColor}dd 100%)`,
-							padding: "3rem 2rem",
+							padding: isMobile ? "2rem 1.5rem" : "3rem 2rem",
 							borderRadius: "lg",
 							color: "white",
 						}}
@@ -125,7 +127,7 @@ export default function ToolDetailPage() {
 								wrap="wrap"
 							>
 								<Badge
-									size="lg"
+									size={isMobile ? "sm" : "lg"}
 									style={{
 										backgroundColor:
 											"rgba(255, 255, 255, 0.3)",
@@ -139,7 +141,7 @@ export default function ToolDetailPage() {
 								{tool.tags.map((tag, tagIndex) => (
 									<Badge
 										key={tagIndex}
-										size="lg"
+										size={isMobile ? "sm" : "lg"}
 										style={{
 											backgroundColor:
 												"rgba(255, 255, 255, 0.3)",
@@ -154,8 +156,16 @@ export default function ToolDetailPage() {
 							</Group>
 							<Title
 								order={1}
-								size="3rem"
-								style={{ color: "white" }}
+								size={isMobile ? "1.5rem" : "3rem"}
+								style={{
+									color: "white",
+									fontSize: isMobile ? "clamp(1.25rem, 4vw, 1.75rem)" : "3rem",
+									lineHeight: isMobile ? 1.3 : 1.2,
+									wordWrap: "break-word",
+									overflowWrap: "break-word",
+									hyphens: "auto",
+									maxWidth: "100%",
+								}}
 							>
 								{tool.title}
 							</Title>
@@ -343,7 +353,7 @@ export default function ToolDetailPage() {
 												Kategorie
 											</Text>
 											<Badge
-												size="lg"
+												size={isMobile ? "sm" : "lg"}
 												style={{
 													backgroundColor:
 														categoryColor,

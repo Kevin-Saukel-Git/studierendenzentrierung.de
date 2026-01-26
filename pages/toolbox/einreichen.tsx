@@ -16,11 +16,13 @@ import {
 	Divider,
 	Notification,
 } from "@mantine/core";
+import { useMediaQuery } from "@mantine/hooks";
 import { ToolCategory, ToolTag } from "../../data/Tool";
 import Link from "next/link";
 import { SEO } from "../../components/SEO";
 
 export default function EinreichenPage() {
+	const isMobile = useMediaQuery("(max-width: 768px)");
 	const [toolName, setToolName] = useState("");
 	const [shortDescription, setShortDescription] = useState("");
 	const [category, setCategory] = useState<string | null>(null);
@@ -57,7 +59,7 @@ export default function EinreichenPage() {
 					<Container size="lg">
 						<Title
 							order={1}
-							size="3rem"
+							size={isMobile ? "2rem" : "3rem"}
 							fw={800}
 							style={{
 								color: "#1e3a8a",
@@ -169,7 +171,7 @@ export default function EinreichenPage() {
 										<Box>
 											<Title
 												order={2}
-												size="1.5rem"
+												size={isMobile ? "1.25rem" : "1.5rem"}
 												fw={600}
 												style={{
 													color: "#1e3a8a",
@@ -320,7 +322,7 @@ export default function EinreichenPage() {
 										<Box>
 											<Title
 												order={2}
-												size="1.5rem"
+												size={isMobile ? "1.25rem" : "1.5rem"}
 												fw={600}
 												style={{
 													color: "#1e3a8a",
@@ -503,7 +505,7 @@ export default function EinreichenPage() {
 										<Box>
 											<Title
 												order={2}
-												size="1.5rem"
+												size={isMobile ? "1.25rem" : "1.5rem"}
 												fw={600}
 												style={{
 													color: "#1e3a8a",

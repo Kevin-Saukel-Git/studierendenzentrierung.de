@@ -1,8 +1,10 @@
 import { Title, Text, Stack, Timeline, Badge, Box, Container, Button, Group } from "@mantine/core";
+import { useMediaQuery } from "@mantine/hooks";
 import Link from "next/link";
 import { SEO } from "../../components/SEO";
 
 export default function VerfahrenPage() {
+	const isMobile = useMediaQuery("(max-width: 768px)");
 	return (
 		<>
 			<SEO
@@ -23,7 +25,7 @@ export default function VerfahrenPage() {
 					<Container size="lg">
 						<Title
 							order={1}
-							size="3rem"
+							size={isMobile ? "2rem" : "3rem"}
 							fw={800}
 							style={{
 								color: "#1e3a8a",
