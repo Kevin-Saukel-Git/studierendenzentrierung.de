@@ -62,8 +62,8 @@ export const Tools: Tool[] = [
                 url: "https://doi.org/10.25656/01"
             }
         ],
-        updatedAt: new Date("01-12-2026"),
-        createdAt: new Date("01-12-2026"),
+        updatedAt: new Date("2026-01-12"),
+        createdAt: new Date("2026-01-12"),
     },
     {
         title: "Social Scoring im Hochschulkontext",
@@ -80,8 +80,8 @@ export const Tools: Tool[] = [
                 url: "https://github.com/henicosa/PartiDeck"
             }
         ],
-        updatedAt: new Date("01-19-2026"),
-        createdAt: new Date("01-19-2026"),
+        updatedAt: new Date("2026-01-19"),
+        createdAt: new Date("2026-01-19"),
     },
     {
         title: "Randomisierte Auswahl von Studierenden durch E-Mail im Namen des Präsidiums",
@@ -98,8 +98,8 @@ export const Tools: Tool[] = [
                 url: "https://github.com/henicosa/PartiDeck"
             }
         ],
-        updatedAt: new Date("01-19-2026"),
-        createdAt: new Date("01-19-2026"),
+        updatedAt: new Date("2026-01-19"),
+        createdAt: new Date("2026-01-19"),
     },
     {
         title: "Townhall",
@@ -122,8 +122,8 @@ export const Tools: Tool[] = [
                 url: "https://guideinc.org/wp-content/uploads/2015/07/Organizing-a-Town-Hall-Meeting.pdf"
             }
         ],
-        updatedAt: new Date("01-19-2026"),
-        createdAt: new Date("01-19-2026"),
+        updatedAt: new Date("2026-01-19"),
+        createdAt: new Date("2026-01-19"),
     },
     {
         title: "Surreallabor Hochschulpolitik",
@@ -141,8 +141,8 @@ export const Tools: Tool[] = [
                 url: "https://github.com/henicosa/PartiDeck"
             }
         ],
-        updatedAt: new Date("01-19-2026"),
-        createdAt: new Date("01-19-2026"),
+        updatedAt: new Date("2026-01-19"),
+        createdAt: new Date("2026-01-19"),
     },
     {
         title: "Goldene Mensakarte",
@@ -159,8 +159,8 @@ export const Tools: Tool[] = [
                 url: "https://github.com/henicosa/PartiDeck"
             }
         ],
-        updatedAt: new Date("01-19-2026"),
-        createdAt: new Date("01-19-2026"),
+        updatedAt: new Date("2026-01-19"),
+        createdAt: new Date("2026-01-19"),
     },
     {
         title: "Newsletter über studentisches Engagement",
@@ -178,8 +178,8 @@ export const Tools: Tool[] = [
                 url: "https://doi.org/10.57674/q1f4-g978"
             }
         ],
-        updatedAt: new Date("01-19-2026"),
-        createdAt: new Date("01-19-2026"),
+        updatedAt: new Date("2026-01-19"),
+        createdAt: new Date("2026-01-19"),
     },
     {
         title: "Teaching Canvas",
@@ -202,8 +202,8 @@ export const Tools: Tool[] = [
                 url: "https://www.uni-bielefeld.de/lehre/innovative-lehrprojekte/bilinked/studentische-partizipation/Teaching-Canvas_Studentische-Partizipation-an-Lehrveranstaltungen.pdf"
             }
         ],
-        updatedAt: new Date("01-19-2026"),
-        createdAt: new Date("01-19-2026"),
+        updatedAt: new Date("2026-01-19"),
+        createdAt: new Date("2026-01-19"),
     },
     {
         title: "Student Digital Transformation Agents",
@@ -227,8 +227,8 @@ export const Tools: Tool[] = [
                 url: "https://hochschulforumdigitalisierung.de/die-einfuehrung-von-student-digital-transformation-agents-an-der-srh-hochschule-heidelberg/"
             }
         ],
-        updatedAt: new Date("01-19-2026"),
-        createdAt: new Date("01-19-2026"),
+        updatedAt: new Date("2026-01-19"),
+        createdAt: new Date("2026-01-19"),
     },
     {
         title: "Bauhaus.Module",
@@ -245,8 +245,8 @@ export const Tools: Tool[] = [
             }
         ],
         literature: [],
-        updatedAt: new Date("01-19-2026"),
-        createdAt: new Date("01-19-2026"),
+        updatedAt: new Date("2026-01-19"),
+        createdAt: new Date("2026-01-19"),
     },
     {
         title: "YOUniversity",
@@ -269,8 +269,8 @@ export const Tools: Tool[] = [
                 url: "https://www.diid.hhu.de/fileadmin/redaktion/DIID/Daten/YOUniversity_Leitfaden-fuer-DozierendeKonzept.pdf"
             }
         ],
-        updatedAt: new Date("01-19-2026"),
-        createdAt: new Date("01-19-2026"),
+        updatedAt: new Date("2026-01-19"),
+        createdAt: new Date("2026-01-19"),
     },
     {
         title: "SHIFT! Evaluation",
@@ -288,8 +288,8 @@ export const Tools: Tool[] = [
             }
         ],
         literature: [],
-        updatedAt: new Date("01-19-2026"),
-        createdAt: new Date("01-19-2026"),
+        updatedAt: new Date("2026-01-19"),
+        createdAt: new Date("2026-01-19"),
     },
     {
         title: "Peer Adivsing",
@@ -307,8 +307,8 @@ export const Tools: Tool[] = [
             }
         ],
         literature: [],
-        updatedAt: new Date("01-19-2026"),
-        createdAt: new Date("01-19-2026"),
+        updatedAt: new Date("2026-01-19"),
+        createdAt: new Date("2026-01-19"),
     },
     {
         title: "Akademisches Mentorrat",
@@ -325,8 +325,8 @@ export const Tools: Tool[] = [
                 url: "https://doi.org/10.57674/q1f4-g978"
             }
         ],
-        updatedAt: new Date("01-19-2026"),
-        createdAt: new Date("01-19-2026"),
+        updatedAt: new Date("2026-01-19"),
+        createdAt: new Date("2026-01-19"),
     },
     {
         title: "Qualitätszirkel",
@@ -344,8 +344,8 @@ export const Tools: Tool[] = [
             }
         ],
         literature: [],
-        updatedAt: new Date("01-19-2026"),
-        createdAt: new Date("01-19-2026"),
+        updatedAt: new Date("2026-01-19"),
+        createdAt: new Date("2026-01-19"),
     },
     {
         title: "Soundingboard",
@@ -358,8 +358,8 @@ export const Tools: Tool[] = [
         ],
         references: [],
         literature: [],
-        updatedAt: new Date("01-19-2026"),
-        createdAt: new Date("01-19-2026"),
+        updatedAt: new Date("2026-01-19"),
+        createdAt: new Date("2026-01-19"),
     },
     {
         title: "Community Lunch",
@@ -377,8 +377,8 @@ export const Tools: Tool[] = [
                 url: "https://www.stifterverband.org/sites/default/files/2025-02/raumlabore_handbuch_studierendenpartizipation_in_der_lernraumgestaltung.pdf"
             }
         ],
-        updatedAt: new Date("01-19-2026"),
-        createdAt: new Date("01-19-2026"),
+        updatedAt: new Date("2026-01-19"),
+        createdAt: new Date("2026-01-19"),
     },
     {
         title: "Fokusgruppen",
@@ -396,8 +396,8 @@ export const Tools: Tool[] = [
                 url: "https://www.stifterverband.org/sites/default/files/2025-02/raumlabore_handbuch_studierendenpartizipation_in_der_lernraumgestaltung.pdf"
             }
         ],
-        updatedAt: new Date("01-19-2026"),
-        createdAt: new Date("01-19-2026"),
+        updatedAt: new Date("2026-01-19"),
+        createdAt: new Date("2026-01-19"),
     },
     {
         title: "Tagung für studentische Forschung",
@@ -415,8 +415,8 @@ export const Tools: Tool[] = [
             }
         ],
         literature: [],
-        updatedAt: new Date("01-19-2026"),
-        createdAt: new Date("01-19-2026"),
+        updatedAt: new Date("2026-01-19"),
+        createdAt: new Date("2026-01-19"),
     },
     {
         title: "Anerkennung von Ehrenamt als ECTS-Punkte",
@@ -428,8 +428,8 @@ export const Tools: Tool[] = [
         ],
         references: [],
         literature: [],
-        updatedAt: new Date(),
-        createdAt: new Date(),
+        updatedAt: new Date("2026-01-19"),
+        createdAt: new Date("2026-01-19"),
     },
     {
         title: "Reduktion von Präsenzveranstaltungen",
@@ -446,8 +446,8 @@ export const Tools: Tool[] = [
                 url: "https://doi.org/10.57674/q1f4-g978"
             }
         ],
-        updatedAt: new Date(),
-        createdAt: new Date(),
+        updatedAt: new Date("2026-01-19"),
+        createdAt: new Date("2026-01-19"),
     },
     {
         title: "Bereitstellung von Räumen für studentisches Engagement",
@@ -459,8 +459,8 @@ export const Tools: Tool[] = [
         ],
         references: [],
         literature: [],
-        updatedAt: new Date(),
-        createdAt: new Date(),
+        updatedAt: new Date("2026-01-19"),
+        createdAt: new Date("2026-01-19"),
     },
     {
         title: "Ausnahmeregelungen für Langzeitstudiengebühren und Maximalstudienzeiten",
@@ -472,8 +472,8 @@ export const Tools: Tool[] = [
         ],
         references: [],
         literature: [],
-        updatedAt: new Date(),
-        createdAt: new Date(),
+        updatedAt: new Date("2026-01-19"),
+        createdAt: new Date("2026-01-19"),
     },
     {
         title: "Einführung von TVStud",
@@ -485,7 +485,7 @@ export const Tools: Tool[] = [
         ],
         references: [],
         literature: [],
-        updatedAt: new Date(),
-        createdAt: new Date(),
+        updatedAt: new Date("2026-01-19"),
+        createdAt: new Date("2026-01-19"),
     }
 ];

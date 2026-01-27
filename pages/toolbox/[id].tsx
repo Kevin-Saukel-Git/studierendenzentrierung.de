@@ -24,12 +24,81 @@ export default function ToolDetailPage() {
 		return colors[category] || "#60a5fa";
 	};
 
-	const formatDate = (date: Date) => {
-		return new Date(date).toLocaleDateString("de-DE", {
+	const parseDate = (date: Date | string): Date => {
+		// If already a Date object and valid, return it
+		if (date instanceof Date && !isNaN(date.getTime())) {
+			return date;
+		}
+		
+		// Handle string dates
+		const dateStr = String(date).trim();
+		
+		// Empty string or invalid input
+		if (!dateStr || dateStr === "Invalid Date" || dateStr === "null" || dateStr === "undefined") {
+			return new Date(NaN);
+		}
+		
+		// Try parsing as ISO string first (most reliable)
+		let parsed = new Date(dateStr);
+		if (!isNaN(parsed.getTime())) {
+			return parsed;
+		}
+		
+		// Handle MM-DD-YYYY format (common in Tool.ts like "01-12-2026")
+		const mmddyyyyMatch = dateStr.match(/^(\d{1,2})-(\d{1,2})-(\d{4})$/);
+		if (mmddyyyyMatch) {
+			const [, month, day, year] = mmddyyyyMatch;
+			// Use UTC to avoid timezone issues
+			parsed = new Date(Date.UTC(parseInt(year), parseInt(month) - 1, parseInt(day)));
+			if (!isNaN(parsed.getTime())) {
+				return parsed;
+			}
+		}
+		
+		// Handle DD-MM-YYYY format
+		const ddmmyyyyMatch = dateStr.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+		if (ddmmyyyyMatch) {
+			const [, day, month, year] = ddmmyyyyMatch;
+			parsed = new Date(Date.UTC(parseInt(year), parseInt(month) - 1, parseInt(day)));
+			if (!isNaN(parsed.getTime())) {
+				return parsed;
+			}
+		}
+		
+		// Try parsing with Date constructor one more time
+		parsed = new Date(dateStr);
+		if (!isNaN(parsed.getTime())) {
+			return parsed;
+		}
+		
+		// Return invalid date if all parsing fails
+		return new Date(NaN);
+	};
+
+	const formatDate = (date: Date | string) => {
+		const dateObj = parseDate(date);
+		if (isNaN(dateObj.getTime())) {
+			return "Unbekannt";
+		}
+		return dateObj.toLocaleDateString("de-DE", {
 			year: "numeric",
 			month: "long",
 			day: "numeric",
 		});
+	};
+
+	const toISOSafe = (date: Date | string): string => {
+		try {
+			const dateObj = parseDate(date);
+			if (isNaN(dateObj.getTime())) {
+				// Return current date as fallback
+				return new Date().toISOString();
+			}
+			return dateObj.toISOString();
+		} catch (error) {
+			// Return current date as fallback
+			return new Date().toISOString();
+		}
 	};
 
 	if (!tool) {
@@ -77,8 +146,8 @@ export default function ToolDetailPage() {
 		name: tool.title,
 		description: tool.shortDescription,
 		url: `https://studierendenzentrierung.de/toolbox/${id}`,
-		datePublished: tool.createdAt.toISOString(),
-		dateModified: tool.updatedAt.toISOString(),
+		datePublished: toISOSafe(tool.createdAt),
+		dateModified: toISOSafe(tool.updatedAt),
 		about: {
 			"@type": "Thing",
 			name: "Studierendenzentrierung",
@@ -419,6 +488,7 @@ export default function ToolDetailPage() {
 												size="sm"
 												c="dimmed"
 											>
+                                                
 												{formatDate(
 													tool.createdAt
 												)}
