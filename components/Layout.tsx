@@ -238,8 +238,8 @@ export function Layout({ children }: LayoutProps) {
 							<Image
 								src="/Logo.png"
 								alt="Studierendenzentrierung"
-								width={isMobile ? 180 : isTablet ? 250 : 300}
-								height={isMobile ? 42 : isTablet ? 58 : 70}
+								width={isMobile ? 180 : isTablet ? 250 : 200}
+								height={isMobile ? 42 : isTablet ? 58 : 50}
 								style={{
 									height: "auto",
 									width: "auto",
@@ -254,14 +254,12 @@ export function Layout({ children }: LayoutProps) {
 								gap="xs"
 								align="center"
 								style={{
-									border: "1px solid rgba(96, 165, 250, 0.2)",
 									borderRadius: "28px",
 									padding: "0.25rem 0.5rem",
 									flex: 1,
 									maxWidth: "650px",
 									justifyContent: "center",
 									margin: "0 auto",
-									boxShadow: "0 4px 12px rgba(96, 165, 250, 0.1), 0 1px 2px rgba(0, 0, 0, 0.04)",
 									backgroundColor: "rgba(255, 255, 255, 0.8)",
 									backdropFilter: "blur(8px)",
 								}}
@@ -458,6 +456,30 @@ export function Layout({ children }: LayoutProps) {
 					zIndex={1000000}
 				>
 					<Stack gap="md">
+						<Link
+							href="/"
+							style={{
+								display: "flex",
+								alignItems: "center",
+								justifyContent: "center",
+								textDecoration: "none",
+								marginBottom: "0.5rem",
+							}}
+							onClick={() => setMobileMenuOpened(false)}
+						>
+							<Image
+								src="/Logo.png"
+								alt="Studierendenzentrierung"
+								width={200}
+								height={50}
+								style={{
+									height: "auto",
+									width: "auto",
+									maxHeight: "50px",
+								}}
+								priority
+							/>
+						</Link>
 						<div
 							ref={searchRef}
 							style={{
